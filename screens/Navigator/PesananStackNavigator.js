@@ -1,28 +1,23 @@
 import React, { Component } from "react";
-import {
+import { 
     View,
     Text,
     StyleSheet
 } from "react-native";
-import ProfileScreen from './ProfileScreen'
-import { createAppContainer } from 'react-navigation'
-import { createStackNavigator } from 'react-navigation-stack'
-
-class ProfileStackNavigator extends Component {
+import PesananScreen from '../PesananScreen'
+import {createStackNavigator} from 'react-navigation-stack'
+class PesananStackNavigator extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>ProfileStackNavigator</Text>
+                <Text>PesananStackNavigator</Text>
             </View>
         );
     }
 }
 
-const ProfileNavigator = createStackNavigator({
-    Profile: {
-        screen: ProfileScreen,
-        navigationOptions: { headerTintColor: 'white' }
-    }
+const PesananNavigator = createStackNavigator({
+    Pesanan:{screen:PesananScreen,navigationOptions:{headerTintColor:'white'}}
 }, {
     defaultNavigationOptions: {
         headerTitleAlign: 'center', headerStyle: {
@@ -30,7 +25,8 @@ const ProfileNavigator = createStackNavigator({
         }
     }
 })
-export default createAppContainer(ProfileNavigator);
+
+export default PesananNavigator;
 
 const styles = StyleSheet.create({
     container: {

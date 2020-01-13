@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import HomeStackNavigator from './HomeStackNavigator';
 import ProfileStackNavigator from './ProfileStackNavigator'
+import PesanStackNavigator from './PesanStackNavigator'
+import PesananStackNavigator from './PesananStackNavigator'
 import { Ionicons } from '@expo/vector-icons';
 import {
     View,
@@ -24,6 +26,22 @@ const HomeTabNavigators = createMaterialBottomTabNavigator({
             tabBarLabel: 'Home',
             tabBarIcon: ({ tintColor }) => (
                 <Ionicons name="md-home" size={24} color={tintColor} />
+            )
+        }
+    },Pesanan: {
+        screen: PesananStackNavigator,
+        navigationOptions: {
+            tabBarLabel: 'Pesanan',
+            tabBarIcon: ({ tintColor }) => (
+                <Ionicons name="ios-list-box" size={24} color={tintColor} />
+            )
+        }
+    },Pesan: {
+        screen: PesanStackNavigator,
+        navigationOptions: {
+            tabBarLabel: 'Pesan',
+            tabBarIcon: ({ tintColor }) => (
+                <Ionicons name="ios-chatbubbles" size={24} color={tintColor} />
             )
         }
     },

@@ -4,23 +4,21 @@ import {
     Text,
     StyleSheet
 } from "react-native";
-import ProfileScreen from './ProfileScreen'
-import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
+import PesanScreen from '../PesanScreen'
 
-class ProfileStackNavigator extends Component {
+class PesanStackNavigator extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>ProfileStackNavigator</Text>
+                <Text>PesanStackNavigator</Text>
             </View>
         );
     }
 }
-
-const ProfileNavigator = createStackNavigator({
-    Profile: {
-        screen: ProfileScreen,
+const PesanNavigator = createStackNavigator({
+    Pesan: {
+        screen: PesanScreen,
         navigationOptions: { headerTintColor: 'white' }
     }
 }, {
@@ -30,7 +28,7 @@ const ProfileNavigator = createStackNavigator({
         }
     }
 })
-export default createAppContainer(ProfileNavigator);
+export default PesanNavigator;
 
 const styles = StyleSheet.create({
     container: {
