@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1053805510035",
+    "firebase_url": "https://marasa-bd6bb.firebaseio.com",
+    "project_id": "marasa-bd6bb",
+    "storage_bucket": "marasa-bd6bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053805510035:android:125f1c282f8d372d5dfc66",
+        "android_client_info": {
+          "package_name": "com.marasa.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053805510035-2jtb9pq683b6q5va5m8f886bgl14sp4m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marasa.app",
+            "certificate_hash": "0397ad800de53dc7dc5e8d94d9fa78f450ee9e67"
+          }
+        },
+        {
+          "client_id": "1053805510035-uevbcub57ghn8nseog8aqvpbijcmhf2k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAETieZU1l9O-mKtYKM5bKjA28N8IIVDDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053805510035-uevbcub57ghn8nseog8aqvpbijcmhf2k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
