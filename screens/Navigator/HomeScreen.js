@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, SafeAreaView, Button, Image, TouchableOpacity, 
 import firebase from 'firebase';
 import * as GoogleSignIn from 'expo-google-sign-in';
 class HomeScreen extends React.Component {
-    
     render() {
         return (
             /* point */
