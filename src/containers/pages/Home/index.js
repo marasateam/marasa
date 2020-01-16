@@ -1,7 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Button, Image, TouchableOpacity, ScrollView } from 'react-native';
-import firebase from 'firebase';
-import * as GoogleSignIn from 'expo-google-sign-in';
 import {NamePoint, ButtonMenu, RecomendedCard} from '../../../components/molecules';
 import {PromoCard} from '../../../components/atoms';
 import Recomended from '../../../containers/organisms/Recomended';
@@ -9,8 +7,8 @@ class HomeScreen extends React.Component {
     render() {
         return (
             /* point */
-            <ScrollView style={{marginHorizontal:17, paddingTop:16}}>
-                <NamePoint Image={require('../../../../assets/logo/Money.png')}/>
+            <ScrollView style={{marginHorizontal:17, paddingTop:16}} showsVerticalScrollIndicator={false}>
+                <NamePoint name="Test Name" point="250" Image={require('../../../../assets/logo/Money.png')}/>
                 <ButtonMenu ImageIcon={require('../../../../assets/logo/pesawat.png')}  ImageArrow={require('../../../../assets/logo/panahkanan.png')}/> 
                 <View>
                     <View style={{paddingTop:12,paddingBottom:10}}>

@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-safe-area-constxt
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @react-native-community/async-storage
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\TXE Components\iCLS\;C:\Program Files\Intel\TXE Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\TXE Components\DAL\;C:\Program Files (x86)\Intel\TXE Components\DAL\;C:\Program Files\Intel\TXE Components\IPT\;C:\Program Files (x86)\Intel\TXE Components\IPT\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Users\asus\Desktop\OpenSSL\bin;C:\Program Files (x86)\Java\jre1.8.0_181\bin;g:\BC5\BIN;C:\Users\asus\AppData\Local\Microsoft\WindowsApps;C:\Users\asus\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\asus\AppData\Local\Yarn\bin;C:\Users\asus\AppData\Roaming\npm;C:\Users\asus\Desktop\OpenSSL\bin;
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-native-safe-area-constxt: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66056:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140665:22)
-      at Request.emit (events.js:198:13)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141637:10)
-      at Request.emit (events.js:198:13)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141559:12)
-      at Object.onceWrapper (events.js:286:20)
-      at IncomingMessage.emit (events.js:203:15)
-      at endReadableNT (_stream_readable.js:1143:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  Error: EPERM: operation not permitted, unlink 'G:\AMSYARI\myReactProject\marasa\node_modules\@babel\plugin-transform-runtime\node_modules\.bin'
 
 npm manifest: 
   {
@@ -47,6 +37,7 @@ npm manifest:
       "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
       "react-native-gesture-handler": "~1.5.0",
       "react-native-paper": "^3.4.0",
+      "react-native-safe-area-context": "^0.6.2",
       "react-native-web": "~0.11.7",
       "react-navigation": "^4.0.10",
       "react-navigation-material-bottom-tabs": "^2.1.5",
@@ -4900,6 +4891,11 @@ Lockfile:
       "@callstack/react-theme-provider" "^3.0.5"
       color "^3.1.2"
       react-native-safe-area-view "^0.14.6"
+  
+  react-native-safe-area-context@^0.6.2:
+    version "0.6.2"
+    resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-0.6.2.tgz#d467ac8a953426bfbb6d8f417222b0dc3952be7a"
+    integrity sha512-VtBW0JymVCwVt0TGxTv25Co3wtOv3Yb/K5pAUYkjKXNhWFDz5ZwUG/Yho/p0EkWYlFdroJcSqlvVFl2n3AU7SA==
   
   react-native-safe-area-view@^0.14.1, react-native-safe-area-view@^0.14.6:
     version "0.14.8"
