@@ -9,7 +9,8 @@ import {
   KeyboardAvoidingView,
   ActivityIndicator,
   Keyboard,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  AsyncStorage
 } from 'react-native';
 import 'firebase/firestore';
 import firebase from 'firebase';
@@ -17,11 +18,23 @@ import * as Facebook from 'expo-facebook'
 import * as GoogleSignIn from 'expo-google-sign-in'
 class SignUpScreen extends React.Component {
   state = { displayName: '', email: '', password: '', errorMessage: '', loading: false };
-  onLoginSuccess() {
+  constructor(props){
+    super(props)
+    this.onLoginSuccess = this.onLoginSuccess.bind(this);
+  }
+  onLoginSuccess(LoginMethod) {
+    this.saveLoginMethod(LoginMethod)
     this.props.navigation.navigate('App');
   }
   onLoginFailure(errorMessage) {
     this.setState({ error: errorMessage, loading: false });
+  }
+  async saveLoginMethod(LoginMethod){
+    try{
+        await AsyncStorage.setItem("LOGIN_METHOD",LoginMethod);
+    }catch(error){
+        console.log("Error save login methode :"+error.message);
+    }
   }
   renderLoading() {
     if (this.state.loading) {
@@ -36,7 +49,7 @@ class SignUpScreen extends React.Component {
     await firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(this.onLoginSuccess.bind(this))
+      .then(this.onLoginSuccess("EMAIL"))
       .catch(error => {
           let errorCode = error.code;
           let errorMessage = error.message;
@@ -57,7 +70,7 @@ class SignUpScreen extends React.Component {
         await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
         const credential = firebase.auth.FacebookAuthProvider.credential(token);
         const facebookProfileData = await firebase.auth().signInWithCredential(credential);
-        this.onLoginSuccess.bind(this);
+        this.onLoginSuccess("FACEBOOK");
       }
     } catch ({ message }) {
       alert(`Facebook Login Error: ${message}`);
@@ -71,7 +84,7 @@ class SignUpScreen extends React.Component {
         await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
         const credential = firebase.auth.GoogleAuthProvider.credential(user.auth.idToken, user.auth.accessToken);
         const googleProfileData = await firebase.auth().signInWithCredential(credential);
-        this.onLoginSuccess.bind(this);
+        this.onLoginSuccess("GMAIL");
       }
     } catch ({ message }) {
       alert('login: Error:' + message);

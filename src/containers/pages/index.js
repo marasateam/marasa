@@ -6,6 +6,7 @@ import Pesan from './Pesan'
 import Login from './Login'
 import Loading from './Loading'
 import Register from './Register'
+import ProfileSettings from './ProfileSettings'
 export {
     Home,
     Profile,
@@ -13,5 +14,6 @@ export {
     Pesan,
     Login,
     Loading,
-    Register
+    Register,
+    ProfileSettings
 }

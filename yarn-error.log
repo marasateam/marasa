@@ -1,5 +1,9 @@
 Arguments: 
+<<<<<<< HEAD
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-reanimated
+=======
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @react-native-community/async-storage
+>>>>>>> 0e6892d56f130a8f712e5969ebf8916a69c19974
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;;C:\Users\User\AppData\Local\Yarn\bin;C:\Users\User\AppData\Roaming\npm
@@ -14,8 +18,12 @@ Platform:
   win32 x64
 
 Trace: 
+<<<<<<< HEAD
   Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
       at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)
+=======
+  Error: EPERM: operation not permitted, unlink 'G:\AMSYARI\myReactProject\marasa\node_modules\@babel\plugin-transform-runtime\node_modules\.bin'
+>>>>>>> 0e6892d56f130a8f712e5969ebf8916a69c19974
 
 npm manifest: 
   {
