@@ -17,7 +17,30 @@ import { ItemProfileLoginMethod, ItemProfile } from '../../../components/molecul
 
 
 
+const PoinInProfile = (props) => {
+    return (
+        <View style={{
+            flexDirection: 'row',
+            justifyContent: "space-between",
+            backgroundColor: '#F7F7F7',
+            borderRadius: 10,
+            padding: 14,
+            elevation: 2, 
+            alignItems:"center",
+            width:"90%"
 
+        }}>
+
+            <Text style={{  margin: 2 ,fontWeight:"600" }}>Poin</Text>
+            <View style={{flexDirection:"row",alignItems:"center",marginRight:10}}>
+                <Image source={require('../../../../assets/icon/coin.png')} style={{ width: 26, height: 26, margin: 2 }} />
+                <Text style={{ fontWeight: "bold",marginLeft:10 }}>135</Text>
+            </View>
+
+
+        </View>
+    )
+}
 class ProfileScreen extends Component {
     state = { user: {}, loginMethod: "" };
     componentDidMount() {
@@ -41,13 +64,15 @@ class ProfileScreen extends Component {
                         />
                         <Text style={{ marginTop: 5, fontWeight: "bold" }}>{firebase.auth().currentUser.displayName}</Text>
 
-                        <View style={{alignItems:"center" }}>
-                            <View style={{ borderBottomWidth: 1, borderColor: "#C4C4C4", width:250, marginBottom: 10, marginTop: 10 }}></View>
-                            <Image source={require('../../../../assets/icon/coin.png')} style={{ width: 30, height: 30 ,margin:2}} />
-                            <Text style={{ color: "#c1c1c1", fontSize: 12 ,margin:2}}>Poin</Text>
-                            <Text style={{ fontWeight: "bold",margin:2 }}>135</Text>
+                        <View style={{ alignItems: "center" }}>
+                            <View style={{ borderBottomWidth: 1, borderColor: "#C4C4C4", width: 250, marginBottom: 10, marginTop: 10 }}></View>
+
                         </View>
                     </View>
+                    <View style={styles.cardIcon}>
+                        <PoinInProfile />
+                    </View>
+
                     <View style={styles.cardListProfile}>
                         <View style={{ marginBottom: 10, flexDirection: "row", alignItems: "center", justifyContent: "flex-start" }}>
                             <Text style={{ fontWeight: "bold", fontSize: 20 }}>Akun</Text>
@@ -95,7 +120,15 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         width: '100%',
         elevation: 1
-    }, imageProfile: {
+    }, cardIcon: {
+        marginTop: 10,
+        paddingVertical:10,
+        width: "100%",
+        alignItems:"center",
+        backgroundColor:"white",
+        elevation:1
+    }
+    , imageProfile: {
         width: 80,
         height: 80,
         borderRadius: 80 / 2,
