@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import firebase from 'firebase';
 import * as GoogleSignIn from 'expo-google-sign-in';
-import {Ionicons} from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 
 
 const ButtonLogOff = (props) => {
@@ -23,10 +23,21 @@ const ButtonLogOff = (props) => {
             padding: 10,
             borderRadius: 20,
             elevation: 3,
-            marginVertical:10
+            marginVertical: 10
         }} onPress={async () => {
-            firebase.auth().signOut();
-            await GoogleSignIn.signOutAsync();
+            Alert.alert("Logoff", "yakin ingin logoff akun ini.?", [
+
+                {
+                    text: 'Batal',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancel',
+                },
+                { text: 'Keluar', onPress:async()=>{firebase.auth().signOut();
+                    await GoogleSignIn.signOutAsync();}  },
+            ],
+                { cancelable: false })
+
+            
         }}>
             <Text>{props.text}</Text>
         </TouchableOpacity>
@@ -72,19 +83,17 @@ class ProfileSettings extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{ backgroundColor: "white", width: "100%" ,marginTop:15,paddingBottom:1,alignItems:"center",elevation:2}}>
-                    <View style={{width:"100%"}}>
-                        <Text style={{fontSize:18, fontWeight:"bold",marginLeft:15,marginTop:10}}>Akun</Text>
-                        <View style={{ borderBottomWidth: 0.5, borderColor: "#C4C4C4", width:"100%", marginTop:10}}></View>
+                <View style={{ backgroundColor: "white", width: "100%", marginTop: 15, paddingBottom: 1, alignItems: "center", elevation: 2 }}>
+                    <View style={{ width: "100%" }}>
+                        <Text style={{ fontSize: 18, fontWeight: "bold", marginLeft: 15, marginTop: 10 }}>Akun</Text>
+                        <View style={{ borderBottomWidth: 0.5, borderColor: "#C4C4C4", width: "100%", marginTop: 10 }}></View>
                     </View>
-                    <TouchableOpacity onPress={() => this.setState({ modalGantiPasswordVisible: true })} style={{flexDirection:"row",alignItems:'flex-start',width:"100%",paddingLeft:15,paddingTop:10,paddingBottom:10,backgroundColor:"#f6f6f6"}}>
-                        <Ionicons name="ios-key" size={28} style={{marginRight: 10,}} />
-                        <Text style={{alignSelf:"center"}}>Edit Password</Text>
+                    <TouchableOpacity onPress={() => this.setState({ modalGantiPasswordVisible: true })} style={{ flexDirection: "row", alignItems: 'flex-start', width: "100%", paddingLeft: 15, paddingTop: 10, paddingBottom: 10, backgroundColor: "#f6f6f6" }}>
+                        <Ionicons name="ios-key" size={28} style={{ marginRight: 10, }} />
+                        <Text style={{ alignSelf: "center" }}>Edit Password</Text>
                     </TouchableOpacity>
-                    <ButtonLogOff  text="LogOff Akun"/>
-                    
-                        <ModalGantiPassword visible={this.state.modalGantiPasswordVisible} onClose={() => this.setState({ modalGantiPasswordVisible: false })} />
-                    
+                    <ButtonLogOff text="LogOff Akun" />
+                    <ModalGantiPassword visible={this.state.modalGantiPasswordVisible} onClose={() => this.setState({ modalGantiPasswordVisible: false })} />
 
                 </View>
             </View>

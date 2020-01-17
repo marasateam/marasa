@@ -1,12 +1,15 @@
 
-import Home from './Home'
-import Profile from './Profile'
-import Pesanan from './Pesanan'
-import Pesan from './Pesan'
-import Login from './Login'
-import Loading from './Loading'
-import Register from './Register'
-import ProfileSettings from './ProfileSettings'
+import Home from './Home';
+import Profile from './Profile';
+import Pesanan from './Pesanan';
+import Pesan from './Pesan';
+import Login from './Login';
+import Loading from './Loading';
+import Register from './Register';
+import ProfileSettings from './ProfileSettings';
+import CariTiket from './CariTiket';
+import ListPenerbangan from './ListPenerbangan';
+import DetailPemesanan from './DetailPemesanan'
 export {
     Home,
     Profile,
@@ -15,5 +18,8 @@ export {
     Login,
     Loading,
     Register,
-    ProfileSettings
+    ProfileSettings,
+    CariTiket,
+    ListPenerbangan,
+    DetailPemesanan
 }

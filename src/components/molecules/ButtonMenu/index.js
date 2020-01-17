@@ -10,8 +10,9 @@ const ButtonMenu = (props) => {
                 backgroundColor: 'white',
                 borderRadius: 10,
                 padding: 10,
-                elevation:1
-            }}>
+                elevation:1,
+                
+            }} onPress={props.onPress}>
                 <Image source={props.ImageIcon} style={{ backgroundColor: 'red', borderRadius: 8, justifyContent: 'center', width: 50, height: 50 }}></Image>
                 <Text style={{ fontSize: 16, fontWeight: 'bold', paddingTop: 16, paddingHorizontal: 17 }}>Tiket Pesawat</Text>
                 <Image source={props.ImageArrow} style={{ justifyContent: 'center', width: 30, height: 30, marginLeft: 90, marginTop: 8 }}></Image>

@@ -1,11 +1,7 @@
 import React from 'react'
 import {Profile,ProfileSettings} from '../../../containers/pages'
-import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
-import { Ionicons } from '@expo/vector-icons';
 import {SettingsIcon} from '../../../components/atoms'
-import { Alert } from 'react-native';
-import { withNavigation } from 'react-navigation'
 
 const ProfileNavigator = createStackNavigator({
     Profile: {
@@ -21,10 +17,7 @@ const ProfileNavigator = createStackNavigator({
     defaultNavigationOptions: {
         headerTitleAlign: 'center', headerStyle: {
             backgroundColor: '#EE2424'
-        },
-        cardStyle:{
-            backgroundColor:'#CCCCCC'
-        },
+        }
     }
 })
 

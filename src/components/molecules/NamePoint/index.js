@@ -11,7 +11,7 @@ const NamePoint = (props) => {
 
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <Image source={props.Image} style={{ height: 16, width: 16 }}></Image>
-                <Text style={{ fontSize: 16, fontWeight: 'bold', paddingLeft: 5 }}>{props.point}</Text>
+                <Text style={{ fontSize: 16, fontWeight: 'bold', paddingLeft: 5 }}>{props.Poin}</Text>
             </View>
         </View>
     )
