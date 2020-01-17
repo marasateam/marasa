@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { createAppContainer } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import ScreenTabNavigator from '../ScreenTabNavigator'
 
 class HomeTabNavigator extends Component {
     render() {
@@ -50,13 +51,15 @@ const HomeTabNavigators = createMaterialBottomTabNavigator({
     ProfileScreen: {
         screen: ProfileStackNavigator,
         navigationOptions: {
+            tabBarPosition: 'top',
+            swipeEnable: true,
             tabBarLabel: 'Akun',
             tabBarIcon: ({ tintColor }) => (
                 <Ionicons name="ios-person" size={24} color={tintColor} />
             )
         }
     }
-}, { barStyle: { backgroundColor: '#EE2424' } })
+}, { barStyle: { backgroundColor: '#FF201D' } })
 const HomeTabContainer = createAppContainer(HomeTabNavigators);
 export default HomeTabNavigator;
 

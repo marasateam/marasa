@@ -5,11 +5,13 @@ import {
     StyleSheet
 } from "react-native";
 
+
+
 class PesananScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>PesananScreen</Text>
+                <Text>apa</Text>
             </View>
         );
     }
@@ -23,3 +25,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     }
 });
+

@@ -1,17 +1,20 @@
-
 import {Pesanan} from '../../../containers/pages'
 import {createStackNavigator} from 'react-navigation-stack'
+import ScreenTabNavigator from '../../../navigations/ScreenTabNavigator'
 
 
 const PesananNavigator = createStackNavigator({
-    Pesanan:{screen:Pesanan,navigationOptions:{headerTintColor:'white'}}
+    Pesanan:{screen:ScreenTabNavigator,navigationOptions:{headerTintColor:'white'}},
 }, {
     defaultNavigationOptions: {
         headerTitleAlign: 'center', headerStyle: {
-            backgroundColor: '#EE2424'
+            backgroundColor: '#FF201D'
         }
     }
 })
 
 export default PesananNavigator;
+
+
+
 

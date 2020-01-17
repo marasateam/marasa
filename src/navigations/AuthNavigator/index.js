@@ -6,7 +6,7 @@ const AuthNavigator = createSwitchNavigator(
     Loading: { screen: Loading },
     Register: { screen: Register },
     Login: { screen: Login },
-    HomeTabNavigator:{screen:HomeTabNavigator},
+    HomeTabNavigator:{screen:HomeTabNavigator}
     
   },
   { initialRouteName: 'Loading' }

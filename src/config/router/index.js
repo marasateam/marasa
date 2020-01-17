@@ -7,5 +7,5 @@ export {
     HomeStackNavigator,
     PesanStackNavigator,
     PesananStackNavigator,
-    ProfileStackNavigator
+    ProfileStackNavigator,
 }
