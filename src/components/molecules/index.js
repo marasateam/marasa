@@ -4,6 +4,7 @@ import RecomendedCard from './RecomendedCard'
 import RecomendedCard2 from './RecomendedCard2'
 import ItemProfileLoginMethod from './ItemProfileLoginMethod'
 import ItemProfile from './ItemProfile'
+import NotificationsIcon from './NotificationsIcon';
 
 export {
     NamePoint, 
@@ -11,5 +12,6 @@ export {
     RecomendedCard,
     RecomendedCard2,
     ItemProfile,
-    ItemProfileLoginMethod
+    ItemProfileLoginMethod,
+    NotificationsIcon
 }

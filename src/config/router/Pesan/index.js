@@ -5,7 +5,7 @@ import {
     StyleSheet
 } from "react-native";
 import { createStackNavigator } from 'react-navigation-stack'
-import {Pesan} from '../../../containers/pages'
+import {Pesan,PesanChat} from '../../../containers/pages'
 
 class PesanStackNavigator extends Component {
     render() {
@@ -20,6 +20,10 @@ const PesanNavigator = createStackNavigator({
     Pesan: {
         screen: Pesan,
         navigationOptions: { headerTintColor: 'white' }
+    },
+    PesanChat: {
+        screen: PesanChat,
+        navigationOptions: { headerTintColor: 'white' }
     }
 }, {
     defaultNavigationOptions: {
@@ -28,6 +32,16 @@ const PesanNavigator = createStackNavigator({
         }
     }
 })
+PesanNavigator.navigationOptions = ({ navigation }) => {
+    let tabBarVisible = true;
+    if (navigation.state.index > 0) {
+      tabBarVisible = false;
+    }
+  
+    return {
+      tabBarVisible,
+    };
+};
 export default PesanNavigator;
 
 const styles = StyleSheet.create({

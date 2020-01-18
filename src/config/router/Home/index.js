@@ -1,15 +1,24 @@
-import { Home, CariTiket, ListPenerbangan, DetailPemesanan } from '../../../containers/pages'
+import React from 'react'
+import { Home,Notifications, CariTiket, ListPenerbangan, DetailPemesanan } from '../../../containers/pages'
 import { createStackNavigator } from 'react-navigation-stack'
+import {NotificationsIcon} from '../../../components/molecules';
 
 const HomeNavigator = createStackNavigator({
     Home: {
         screen: Home,
         navigationOptions: {
             headerTitle: 'Marasa',
-            headerTintColor: 'white'
+            headerTintColor: 'white',
+            headerRight:()=><NotificationsIcon/>
         }
     },
-    CariTiket: {
+    Notifications: {
+        screen: Notifications,
+        navigationOptions: {
+            headerTitle: 'Notifikasi',
+            headerTintColor: 'white'
+        }
+    },CariTiket: {
         screen: CariTiket,
         navigationOptions: {
             headerTitle: 'Cari Tiket',

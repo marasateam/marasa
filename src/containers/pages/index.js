@@ -10,6 +10,8 @@ import ProfileSettings from './ProfileSettings';
 import CariTiket from './CariTiket';
 import ListPenerbangan from './ListPenerbangan';
 import DetailPemesanan from './DetailPemesanan'
+import PesanChat from './PesanChat';
+import Notifications from './Notifications'
 export {
     Home,
     Profile,
@@ -21,5 +23,7 @@ export {
     ProfileSettings,
     CariTiket,
     ListPenerbangan,
-    DetailPemesanan
+    DetailPemesanan,
+    PesanChat,
+    Notifications    
 }
