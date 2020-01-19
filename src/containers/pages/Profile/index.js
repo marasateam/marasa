@@ -22,7 +22,7 @@ const PoinInProfile = (props) => {
         <View style={{
             flexDirection: 'row',
             justifyContent: "space-between",
-            backgroundColor: '#F7F7F7',
+            backgroundColor: '#E90000',
             borderRadius: 10,
             padding: 14,
             elevation: 2, 
@@ -31,10 +31,10 @@ const PoinInProfile = (props) => {
 
         }}>
 
-            <Text style={{  margin: 2 ,fontWeight:"600" }}>Poin</Text>
+            <Text style={{  margin: 2 ,fontWeight:"700",color:"white" }}>Poin</Text>
             <View style={{flexDirection:"row",alignItems:"center",marginRight:10}}>
                 <Image source={require('../../../../assets/icon/coin.png')} style={{ width: 26, height: 26, margin: 2 }} />
-                <Text style={{ fontWeight: "bold",marginLeft:10 }}>135</Text>
+                <Text style={{ fontWeight: "bold",marginLeft:10,color:"white"}}>135</Text>
             </View>
 
 
