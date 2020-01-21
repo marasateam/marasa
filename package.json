@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.2.2",
     "@react-native-community/masked-view": "^0.1.5",
     "expo": "~36.0.0",
     "expo-facebook": "~8.0.0",
@@ -21,11 +22,16 @@
     "react-native-datepicker-modal": "^1.3.0",
     "react-native-gesture-handler": "~1.5.0",
     "react-native-gifted-chat": "^0.13.0",
+<<<<<<< HEAD
     "react-native-material-dropdown": "^0.11.1",
+=======
+    "react-native-modals": "^0.19.9",
+>>>>>>> 34adcd6fda6c3987c423ae2db13a96ed5bf9fc2d
     "react-native-paper": "^3.4.0",
     "react-native-picker-select": "^6.3.4",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.6.2",
+    "react-native-simple-radio-button": "^2.7.4",
     "react-native-web": "~0.11.7",
     "react-navigation": "^4.0.10",
     "react-navigation-material-bottom-tabs": "^2.1.5",
