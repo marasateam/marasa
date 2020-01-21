@@ -5,6 +5,8 @@ import RecomendedCard2 from './RecomendedCard2'
 import ItemProfileLoginMethod from './ItemProfileLoginMethod'
 import ItemProfile from './ItemProfile'
 import NotificationsIcon from './NotificationsIcon';
+import HeaderListPenerbangan from './HeaderListPenerbangan'
+import ModalHeader from './ModalHeader'
 
 export {
     NamePoint, 
@@ -13,5 +15,7 @@ export {
     RecomendedCard2,
     ItemProfile,
     ItemProfileLoginMethod,
-    NotificationsIcon
+    NotificationsIcon,
+    HeaderListPenerbangan,
+    ModalHeader
 }

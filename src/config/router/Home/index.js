@@ -1,7 +1,7 @@
 import React from 'react'
 import { Home,Notifications, CariTiket, ListPenerbangan, DetailPemesanan } from '../../../containers/pages'
 import { createStackNavigator } from 'react-navigation-stack'
-import {NotificationsIcon} from '../../../components/molecules';
+import {NotificationsIcon,HeaderListPenerbangan} from '../../../components/molecules';
 
 const HomeNavigator = createStackNavigator({
     Home: {
@@ -28,7 +28,7 @@ const HomeNavigator = createStackNavigator({
     ListPenerbangan: {
         screen: ListPenerbangan,
         navigationOptions: {
-            headerTitle: 'List Penerbangan',
+            headerTitle: ()=><HeaderListPenerbangan/>,
             headerTintColor: 'white'
         }
     },
