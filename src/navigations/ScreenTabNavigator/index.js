@@ -8,6 +8,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs'
 
 class EtiketScreen extends React.Component {
