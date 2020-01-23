@@ -22,7 +22,7 @@ class TabRincianHarga extends Component {
 
                 <View style={{flexDirection:"row",justifyContent:"space-between", marginBottom:20,marginTop:10}}>
                 <Text style={{fontSize:15}}>Pajak</Text>
-                <Text style={{fontSize:12,color:"grey"}}>include</Text>
+                <Text style={{fontSize:12,color:"grey"}}>Include</Text>
                 </View>
 
                 <BottomLine/>
