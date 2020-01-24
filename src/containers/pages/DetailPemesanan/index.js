@@ -179,4 +179,3 @@ class DetailPemesanan extends Component {
 }
 
 export default DetailPemesanan;
->>>>>>> c1c5ffe03fe58776e7f22beb9035f47823c6fb86
