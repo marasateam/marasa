@@ -13,4 +13,4 @@ const Recomended = () => {
         </View>
     )
 }
-export default Recomended
+export default Recomended;

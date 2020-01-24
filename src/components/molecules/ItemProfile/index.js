@@ -15,8 +15,6 @@ const ItemProfil = (props) => {
             </View>
             </View>
             <View style={{ borderBottomWidth: 1, borderColor: "#C4C4C4", marginBottom: 10, marginTop: 5 }}></View>
-            
-            
         </TouchableOpacity>
         
     )
