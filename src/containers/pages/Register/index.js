@@ -32,9 +32,15 @@ class SignUpScreen extends React.Component {
   onLoginFailure(errorMessage) {
     this.setState({ error: errorMessage, loading: false });
   }
-  async saveLoginMethod(LoginMethod){
+  async saveLoginMethod(LoginMethod,USERNAME){
     try{
-        await AsyncStorage.setItem("LOGIN_METHOD",LoginMethod);
+      await AsyncStorage.setItem("LOGIN_METHOD",LoginMethod);
+        if(LoginMethod=="EMAIL"){
+          await AsyncStorage.setItem(this.state.email,this.state.displayName)
+          console.log("Register Email")
+        }else{
+          console.log("bukan register email")
+        }   
     }catch(error){
         console.log("Error save login methode :"+error.message);
     }
@@ -100,7 +106,7 @@ class SignUpScreen extends React.Component {
           Keyboard.dismiss();
         }}
       >
-        <ImageBackground source={require("../../../../assets/logo/bacgkround.png")} style={{width:"100%",height:"100%"}}>
+        
         <SafeAreaView style={{ flex: 1,paddingTop:15}}>
           <KeyboardAvoidingView style={styles.container} behavior="padding">
             
@@ -197,7 +203,6 @@ class SignUpScreen extends React.Component {
             </View>
           </KeyboardAvoidingView>
         </SafeAreaView>
-        </ImageBackground>
       </TouchableWithoutFeedback>
     );
   }

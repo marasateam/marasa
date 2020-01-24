@@ -22,7 +22,7 @@ const PoinInProfile = (props) => {
         <View style={{
             flexDirection: 'row',
             justifyContent: "space-between",
-            backgroundColor: '#E90000',
+            backgroundColor: '#E8E8E8',
             borderRadius: 10,
             padding: 14,
             elevation: 2, 
@@ -31,10 +31,10 @@ const PoinInProfile = (props) => {
 
         }}>
 
-            <Text style={{  margin: 2 ,fontWeight:"700",color:"white" }}>Poin</Text>
+            <Text style={{  margin: 2 ,fontWeight:"700",color:"black" }}>Poin</Text>
             <View style={{flexDirection:"row",alignItems:"center",marginRight:10}}>
                 <Image source={require('../../../../assets/icon/coin.png')} style={{ width: 26, height: 26, margin: 2 }} />
-                <Text style={{ fontWeight: "bold",marginLeft:10,color:"white"}}>135</Text>
+                <Text style={{ fontWeight: "bold",marginLeft:10,color:"black"}}>135</Text>
             </View>
 
 
@@ -59,7 +59,7 @@ class ProfileScreen extends Component {
                 <View style={styles.container}>
                     <View style={styles.cardProfile}>
                         <Image
-                            source={{ uri: firebase.auth().currentUser.photoURL }}
+                            source={this.state.loginMethod=="EMAIL"?{uri:"https://www.jumpstarttech.com/files/2018/08/Network-Profile.png"}:  {uri: firebase.auth().currentUser.photoURL}} 
                             style={styles.imageProfile}
                         />
                         <Text style={{ marginTop: 5, fontWeight: "bold" }}>{firebase.auth().currentUser.displayName}</Text>
