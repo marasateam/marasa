@@ -1,12 +1,8 @@
 Arguments: 
-<<<<<<< HEAD
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-reanimated
-=======
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @react-native-community/async-storage
->>>>>>> 0e6892d56f130a8f712e5969ebf8916a69c19974
 
 PATH: 
-  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;;C:\Users\User\AppData\Local\Yarn\bin;C:\Users\User\AppData\Roaming\npm
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\MacoaMp\AppData\Local\Microsoft\WindowsApps;;C:\Users\MacoaMp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\MacoaMp\AppData\Local\Yarn\bin;C:\Users\MacoaMp\AppData\Roaming\npm
 
 Yarn version: 
   1.21.1
@@ -18,12 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-<<<<<<< HEAD
-  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)
-=======
-  Error: EPERM: operation not permitted, unlink 'G:\AMSYARI\myReactProject\marasa\node_modules\@babel\plugin-transform-runtime\node_modules\.bin'
->>>>>>> 0e6892d56f130a8f712e5969ebf8916a69c19974
+  Error: https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.12.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141292:19)
+      at Object.onceWrapper (events.js:286:20)
+      at ClientRequest.emit (events.js:198:13)
+      at TLSSocket.emitRequestTimeout (_http_client.js:662:40)
+      at Object.onceWrapper (events.js:286:20)
+      at TLSSocket.emit (events.js:198:13)
+      at TLSSocket.Socket._onTimeout (net.js:443:8)
+      at ontimeout (timers.js:436:11)
+      at tryOnTimeout (timers.js:300:5)
+      at listOnTimeout (timers.js:263:5)
 
 npm manifest: 
   {
@@ -46,6 +47,7 @@ npm manifest:
       "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
       "react-native-gesture-handler": "~1.5.0",
       "react-native-paper": "^3.4.0",
+      "react-native-reanimated": "^1.7.0",
       "react-native-safe-area-context": "^0.6.2",
       "react-native-web": "~0.11.7",
       "react-navigation": "^4.0.10",
@@ -4906,6 +4908,11 @@ Lockfile:
       "@callstack/react-theme-provider" "^3.0.5"
       color "^3.1.2"
       react-native-safe-area-view "^0.14.6"
+  
+  react-native-reanimated@^1.7.0:
+    version "1.7.0"
+    resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.7.0.tgz#896db2576552ac59d288a1f6c7f00afc171f240c"
+    integrity sha512-FQWSqP605eQVJumuK2HpR+7heF0ZI+qfy4jNguv3Xv8nPFHeIgZaRTXHCEQL2AcuSIj50zy8jGJf5l134QMQWQ==
   
   react-native-safe-area-context@^0.6.2:
     version "0.6.2"
