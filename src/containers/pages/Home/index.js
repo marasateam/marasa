@@ -38,6 +38,7 @@ class HomeScreen extends React.Component {
                 <Recomended />
                 <View style={{ height: 200, justifyContent: "space-around" }}>
                     <Button title="List Penerbangan" onPress={() => { this.props.navigation.navigate("ListPenerbangan") }} />
+                    <Button title="Upload File" onPress={() => { this.props.navigation.navigate("UploadFile") }} />
                     <Button title="Detail Pemesanan" onPress={() => { this.props.navigation.navigate("DetailPemesanan") }} />
                 </View>
             </ScrollView>

@@ -10,7 +10,8 @@ import {
   ActivityIndicator,
   TouchableWithoutFeedback,
   Keyboard,
-  AsyncStorage
+  AsyncStorage,
+  Image
 } from "react-native";
 import "firebase/firestore";
 import firebase from "firebase";
@@ -145,18 +146,22 @@ class SignInScreen extends React.Component {
               <Text>Sign Up</Text>
               </View>
             </TouchableOpacity>
+            <View style={{flex:1,width:"100%",alignItems:"center",justifyContent:"flex-end",paddingBottom:50}}>
             <TouchableOpacity 
               style={{ width: "86%", marginTop: 10 }}
               onPress={() => this.signInWithFacebook()}>
+                
               <View style={styles.button}>
+              <Image source={require("../../../../assets/icon/facebook.png")} style={{width:25,height:25}}/>
                 <Text
                   style={{
                     letterSpacing: 0.5,
                     fontSize: 16,
-                    color: "#FFFFFF"
+                    color: "#FFFFFF",
+                    marginLeft:10
                   }}
                 >
-                  Continue with Facebook
+                  Masuk dengan Facebook
                 </Text>
               </View>
             </TouchableOpacity>
@@ -171,7 +176,7 @@ class SignInScreen extends React.Component {
                     color: "#707070"
                   }}
                 >
-                  Continue with Google
+                  Masuk dengan akun Google
                 </Text>
               </View>
             </TouchableOpacity>
@@ -182,9 +187,11 @@ class SignInScreen extends React.Component {
                   this.props.navigation.navigate("Register");
                 }}
               >
-                Don't have an Account?
+                Daftar Menggunakan Email.
               </Text>
             </View>
+            </View>
+            
           </KeyboardAvoidingView>
         </SafeAreaView>
       </TouchableWithoutFeedback>

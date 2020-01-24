@@ -7,7 +7,7 @@ class LoadingScreen extends React.Component {
             if (user) {
                 this.props.navigation.navigate('HomeTabNavigator');
             } else {
-                this.props.navigation.navigate('Register');
+                this.props.navigation.navigate('Login');
             }
         });
     }

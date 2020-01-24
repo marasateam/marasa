@@ -10,12 +10,15 @@ import {
   ActivityIndicator,
   Keyboard,
   TouchableWithoutFeedback,
-  AsyncStorage
+  AsyncStorage,
+  ImageBackground,
+  Image
 } from 'react-native';
 import 'firebase/firestore';
 import firebase from 'firebase';
 import * as Facebook from 'expo-facebook'
 import * as GoogleSignIn from 'expo-google-sign-in'
+import {primaryColor} from '../../../styles/colors'
 class SignUpScreen extends React.Component {
   state = { displayName: '', email: '', password: '', errorMessage: '', loading: false };
   constructor(props){
@@ -97,11 +100,11 @@ class SignUpScreen extends React.Component {
           Keyboard.dismiss();
         }}
       >
-        <SafeAreaView style={{ flex: 1 }}>
+        <ImageBackground source={require("../../../../assets/logo/bacgkround.png")} style={{width:"100%",height:"100%"}}>
+        <SafeAreaView style={{ flex: 1,paddingTop:15}}>
           <KeyboardAvoidingView style={styles.container} behavior="padding">
-            <Text style={{ fontSize: 32, fontWeight: '700', color: 'gray' }}>
-              Marasa
-            </Text>
+            
+            <Image source={require("../../../../assets/logo/marasa-logo.png")} style={{marginTop:12,width:150,height:70,resizeMode:"contain"}}/>
             <View style={styles.form}>
               <TextInput
                 style={styles.input}
@@ -151,7 +154,6 @@ class SignUpScreen extends React.Component {
               <View style={styles.buttonSignEmail}>
               <Text>Sign Up</Text>
               </View>
-                
             </TouchableOpacity>
             <TouchableOpacity
               style={{ width: '86%', marginTop: 10 }}
@@ -195,6 +197,7 @@ class SignUpScreen extends React.Component {
             </View>
           </KeyboardAvoidingView>
         </SafeAreaView>
+        </ImageBackground>
       </TouchableWithoutFeedback>
     );
   }
