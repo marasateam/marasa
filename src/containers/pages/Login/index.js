@@ -23,19 +23,21 @@ class SignInScreen extends React.Component {
     super(props)
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
   }
-  onLoginSuccess(loginMethod) {
+  async onLoginSuccess(loginMethod) {
     this.props.navigation.navigate('App');
-    saveLoginMethod(loginMethod)
+    try{
+      await AsyncStorage.setItem("LOGIN_METHOD",loginMethod);
+      
+  }catch(error){
+      console.log("Error save login methode :"+error.message);
+    }
   }
+
   onLoginFailure(errorMessage) {
     this.setState({ error: errorMessage, loading: false });
   }
-  async saveLoginMethod(LoginMethod){
-    try{
-        await AsyncStorage.setItem("LOGIN_METHOD",LoginMethod);
-    }catch(error){
-        console.log("Error save login methode :"+error.message);
-    }
+  async saveLoginMethod(LoginMethod,USERNAME){
+    
   }
   renderLoading() {
     if (this.state.loading) {
@@ -103,8 +105,8 @@ class SignInScreen extends React.Component {
       >
         <SafeAreaView style={{ flex: 1 }}>
           <KeyboardAvoidingView style={styles.container} behavior="padding">
-            <Text style={{ fontSize: 32, fontWeight: "700", color: "gray" }}>
-              App Name
+            <Text style={{ fontSize: 32, fontWeight: "700", color: "gray",marginTop:20 }}>
+              Marasa
             </Text>
             <View style={styles.form}>
               <TextInput
