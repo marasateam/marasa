@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home,Notifications, CariTiket, ListPenerbangan, DetailPemesanan } from '../../../containers/pages'
+import { Home,Notifications, CariTiket, ListPenerbangan, DetailPemesanan,UploadFile } from '../../../containers/pages'
 import { createStackNavigator } from 'react-navigation-stack'
 import {NotificationsIcon,HeaderListPenerbangan} from '../../../components/molecules';
 
@@ -36,6 +36,13 @@ const HomeNavigator = createStackNavigator({
         screen: DetailPemesanan,
         navigationOptions: {
             headerTitle: 'Detail Pemesanan',
+            headerTintColor: 'white'
+        }
+    },
+    UploadFile: {
+        screen: UploadFile,
+        navigationOptions: {
+            headerTitle: 'Upload File',
             headerTintColor: 'white'
         }
     }

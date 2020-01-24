@@ -1459,6 +1459,22 @@
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.0.tgz#2a5fa918786d07d3725726f7f650527e1cfeaffd"
   integrity sha512-c4zji5CjWv1tJxIZkz1oUtGcdOlsH3aza28Nqmm+uNDWBRHoMsjooBEN4czZp1V3iXPihE/VRUOBqg+4Xq0W4g==
 
+"@types/react-native-vector-icons@^6.4.4":
+  version "6.4.5"
+  resolved "https://registry.yarnpkg.com/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.5.tgz#74cbfc564bd8435e43ad6728572a0e5b49c335d1"
+  integrity sha512-JBpcjWQE4n0GlE0p6HpDDclT+uXpFC453T5k4h+B38q0utlGJhvgNr8899BoJGc1xOktA2cgqFKmFMJd0h7YaA==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
+"@types/react-native@*":
+  version "0.61.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.61.0.tgz#b204f7581f914d70f7fb4f6ec624ccda40903a5d"
+  integrity sha512-pD6EZIGMRgedmfOLATkrVkPVuNkJTm1HXiPXj4V9l8zkANUv4pcxhdjMoWfV2nhXkbixcgIcD8odVwOqPa1xTQ==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/react" "*"
+
 "@types/react@*":
   version "16.9.17"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.17.tgz#58f0cc0e9ec2425d1441dd7b623421a867aa253e"
@@ -2292,7 +2308,7 @@ color-support@^1.1.3:
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
   integrity sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==
 
-color@^3.1.2:
+color@^3.1.0, color@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/color/-/color-3.1.2.tgz#68148e7f85d41ad7649c5fa8c8106f098d229e10"
   integrity sha512-vXTJhHebByxZn3lDvDJYw4lR5+uB3vuoHsuYA5AKuxRVn5wzzIfQKGLBmgdVRHKTJYeK5rvJcHnrd0Li49CFpg==
@@ -2560,7 +2576,7 @@ deep-extend@^0.6.0:
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
   integrity sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
 
-deepmerge@^3.2.0:
+deepmerge@^3.1.0, deepmerge@^3.2.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
   integrity sha512-GRQOafGHwMHpjPx9iCvTgpu9NojZ49q794EEL94JVEw6VaeA8XTUyBKvAkOOjBX9oJNiV6G3P+T+tihFjo2TqA==
@@ -3380,7 +3396,7 @@ hoist-non-react-statics@^2.3.1:
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
-hoist-non-react-statics@^3.0.1, hoist-non-react-statics@^3.3.0:
+hoist-non-react-statics@^3.0.1, hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#101685d3aff3b23ea213163f6e8e12f4f111e19f"
   integrity sha512-wbg3bpgA/ZqWrZuMOeJi8+SKMhr7X9TesL/rXMjTzh0p0JUBo3II8DHboYbuIXWRlttrUFxwcu/5kygrCw8fJw==
@@ -4786,6 +4802,11 @@ open@^6.2.0:
   dependencies:
     is-wsl "^1.1.0"
 
+opencollective-postinstall@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
+  integrity sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
+
 options@>=0.0.5:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/options/-/options-0.0.6.tgz#ec22d312806bb53e731773e7cdaefcf1c643128f"
@@ -5255,12 +5276,33 @@ react-native-communications@2.2.1:
   resolved "https://registry.yarnpkg.com/react-native-communications/-/react-native-communications-2.2.1.tgz#7883b56b20a002eeb790c113f8616ea8692ca795"
   integrity sha1-eIO1ayCgAu63kMET+GFuqGksp5U=
 
+<<<<<<< HEAD
 react-native-datepicker-modal@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/react-native-datepicker-modal/-/react-native-datepicker-modal-1.3.0.tgz#34f135a00f3d08ca609773f3a958d46694bee9aa"
   integrity sha512-VUda9oszVgwhJ0q9wRULcxm+e7fb3pZmfYCqNY54C7KmESBXV6IQCeFG/+05Lw7IocW4PxUmFdXovHEYKS5Etw==
   dependencies:
     prop-types "^15.6.2"
+=======
+react-native-elements@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-1.2.7.tgz#1eca2db715c41722aeb67aea62bd2a4621adb134"
+  integrity sha512-0S+0R1cbItl15i64qrkWnyMztwpw60d0SUsZGVDKRAMf0Jvq9Clgyh/MzxJx2sr42mbedQP1sg5Et4fZM7Fp1w==
+  dependencies:
+    "@types/react-native-vector-icons" "^6.4.4"
+    color "^3.1.0"
+    deepmerge "^3.1.0"
+    hoist-non-react-statics "^3.1.0"
+    opencollective-postinstall "^2.0.0"
+    prop-types "^15.7.2"
+    react-native-ratings "^6.3.0"
+    react-native-status-bar-height "^2.2.0"
+
+react-native-eva-icons@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-eva-icons/-/react-native-eva-icons-1.2.1.tgz#dfd9cd54ef6245d4a535e46e92951ce682b133d2"
+  integrity sha512-zdEX/ICOYlWeIP7waUBs73N6Emi+X5xfbt94SDVECOhvrr71g2qvmu3mqe0sI4jJ2986D/JARvlx043YK7CpGQ==
+>>>>>>> c1c5ffe03fe58776e7f22beb9035f47823c6fb86
 
 react-native-gesture-handler@~1.5.0:
   version "1.5.3"
@@ -5342,6 +5384,7 @@ react-native-material-textfield@^0.12.0:
   dependencies:
     prop-types "^15.5.9"
 
+<<<<<<< HEAD
 react-native-modal-datetime-picker@^8.1.1:
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-8.1.1.tgz#63609aff50c44cf939ab3024f185a13822b46f76"
@@ -5349,6 +5392,8 @@ react-native-modal-datetime-picker@^8.1.1:
   dependencies:
     prop-types "^15.7.2"
 
+=======
+>>>>>>> c1c5ffe03fe58776e7f22beb9035f47823c6fb86
 react-native-modals@^0.19.9:
   version "0.19.9"
   resolved "https://registry.yarnpkg.com/react-native-modals/-/react-native-modals-0.19.9.tgz#90e78bed3d2cabb28f555ec26a0c89c24e565633"
@@ -5373,6 +5418,7 @@ react-native-paper@^3.4.0:
   dependencies:
     prop-types "^15.5.10"
 
+<<<<<<< HEAD
 react-native-picker-module@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/react-native-picker-module/-/react-native-picker-module-1.2.3.tgz#1ad2de7f946ce178b7cbda7583af220313141c06"
@@ -5384,6 +5430,15 @@ react-native-picker-select@^6.3.4:
   integrity sha512-lAoKeTpMQFqJYEWUbPzIP5tjVWCG1NnYKAeVQfWEXU3yKmgisvOJ92hY4mo0gnCedUB9Br2rqpQTAzYwqHFHjQ==
   dependencies:
     lodash.isequal "^4.5.0"
+=======
+react-native-ratings@^6.3.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-6.5.0.tgz#a1606ccba3c5b54eec8e6cfa4765a45cf0e4ab8d"
+  integrity sha512-YMcfQ7UQCmXGEc/WPlukHSHs5yvckTwjq5fTRk1FG8gaO7fZCNygEUGPuw4Dbvvp3IlsCUn0bOQd63RYsb7NDQ==
+  dependencies:
+    lodash "^4.17.4"
+    prop-types "^15.5.10"
+>>>>>>> c1c5ffe03fe58776e7f22beb9035f47823c6fb86
 
 react-native-reanimated@^1.7.0:
   version "1.7.0"
@@ -5422,10 +5477,20 @@ react-native-simple-radio-button@^2.7.4:
   resolved "https://registry.yarnpkg.com/react-native-simple-radio-button/-/react-native-simple-radio-button-2.7.4.tgz#86e2dbe8af9e6bf60eee088f60466f7a975e7758"
   integrity sha512-QOZNmJUn0ViBGU+at7wAG/uGzd5PfXi0kMHr9lfTCLXknW/f9f2fOVjxjdHvOCdf/zA/eMJBjGjtusSDzQf1+w==
 
+react-native-status-bar-height@^2.2.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.4.0.tgz#de8cee4bb733a196167210d2d0bc1fa10acba3e3"
+  integrity sha512-pWvZFlyIHiuxLugLioq97vXiaGSovFXEyxt76wQtbq0gxv4dGXMPqYow46UmpwOgeJpBhqL1E0EKxnfJRrFz5w==
+
 react-native-tab-view@^2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.11.0.tgz#2e57d1f617ccc88c7f452708804f3409f880b700"
   integrity sha512-vqetlxGO7A8bnqvXcB50MWpRZAImXFrDGz1WCQKdCqe03Ey3ZzENe7yLuWrtBJYlepGfOLAsmCXv+wW82Yfm1w==
+
+react-native-textinput-effects@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-textinput-effects/-/react-native-textinput-effects-0.5.1.tgz#52b54bb56b58a4b67b5d3fa4ffccba3d288cd8c9"
+  integrity sha512-9ywFH1S4WV/IkYcGwFYZrOYx5j84WvbhzWbLO52rN1PxgjI1tfZu8c5Ju8fsA7eLKuXt7YRen4iVTYYahrFq1w==
 
 react-native-view-shot@3.0.2:
   version "3.0.2"

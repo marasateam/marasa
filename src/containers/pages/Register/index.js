@@ -10,12 +10,15 @@ import {
   ActivityIndicator,
   Keyboard,
   TouchableWithoutFeedback,
-  AsyncStorage
+  AsyncStorage,
+  ImageBackground,
+  Image
 } from 'react-native';
 import 'firebase/firestore';
 import firebase from 'firebase';
 import * as Facebook from 'expo-facebook'
 import * as GoogleSignIn from 'expo-google-sign-in'
+import {primaryColor} from '../../../styles/colors'
 class SignUpScreen extends React.Component {
   state = { displayName: '', email: '', password: '', errorMessage: '', loading: false };
   constructor(props){
@@ -29,9 +32,15 @@ class SignUpScreen extends React.Component {
   onLoginFailure(errorMessage) {
     this.setState({ error: errorMessage, loading: false });
   }
-  async saveLoginMethod(LoginMethod){
+  async saveLoginMethod(LoginMethod,USERNAME){
     try{
-        await AsyncStorage.setItem("LOGIN_METHOD",LoginMethod);
+      await AsyncStorage.setItem("LOGIN_METHOD",LoginMethod);
+        if(LoginMethod=="EMAIL"){
+          await AsyncStorage.setItem(this.state.email,this.state.displayName)
+          console.log("Register Email")
+        }else{
+          console.log("bukan register email")
+        }   
     }catch(error){
         console.log("Error save login methode :"+error.message);
     }
@@ -97,11 +106,11 @@ class SignUpScreen extends React.Component {
           Keyboard.dismiss();
         }}
       >
-        <SafeAreaView style={{ flex: 1 }}>
+        
+        <SafeAreaView style={{ flex: 1,paddingTop:15}}>
           <KeyboardAvoidingView style={styles.container} behavior="padding">
-            <Text style={{ fontSize: 32, fontWeight: '700', color: 'gray' }}>
-              Marasa
-            </Text>
+            
+            <Image source={require("../../../../assets/logo/marasa-logo.png")} style={{marginTop:12,width:150,height:70,resizeMode:"contain"}}/>
             <View style={styles.form}>
               <TextInput
                 style={styles.input}
@@ -151,7 +160,6 @@ class SignUpScreen extends React.Component {
               <View style={styles.buttonSignEmail}>
               <Text>Sign Up</Text>
               </View>
-                
             </TouchableOpacity>
             <TouchableOpacity
               style={{ width: '86%', marginTop: 10 }}

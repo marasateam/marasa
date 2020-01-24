@@ -1,25 +1,33 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Button,AsyncStorage } from 'react-native';
 import { NamePoint, ButtonMenu } from '../../../components/molecules';
 import { PromoCard } from '../../../components/atoms';
 import Recomended from '../../../containers/organisms/Recomended';
 import firebase from 'firebase';
 class HomeScreen extends React.Component {
     state={
-        user:{}
+        user:{},
+        loginMethod:"",
+        username:""
     }
     componentDidMount(){
-        
         firebase.auth().onAuthStateChanged((user) => {
             if (user != null) {
                 this.setState({ user: user });
+                AsyncStorage.getItem("LOGIN_METHOD").then((value) => { 
+                    this.setState({ loginMethod: value });
+                    console.log("login methode : "+value);
+                    console.log("email : "+this.state.user.email)
+                    AsyncStorage.getItem(this.state.user.email).then(value=>{this.setState({username:value})})
+                })
             }
         });
     }
+    
     render() {
         return (
             <ScrollView style={{ marginHorizontal: 17, paddingTop: 16 }} showsVerticalScrollIndicator={false}>
-                <NamePoint name={this.state.user.displayName} Image={require('../../../../assets/icon/coin.png')} Poin="120" />
+                <NamePoint name={this.state.loginMethod=="EMAIL"?this.state.username:this.state.user.displayName} Image={require('../../../../assets/icon/coin.png')} Poin="120" />
                 <ButtonMenu ImageIcon={require('../../../../assets/logo/pesawat.png')} ImageArrow={require('../../../../assets/promo/ic.png')} onPress={() => { this.props.navigation.navigate("CariTiket") }} />
                 <View>
                     <View style={{ paddingTop: 12, paddingBottom: 10 }}>
@@ -38,6 +46,7 @@ class HomeScreen extends React.Component {
                 <Recomended />
                 <View style={{ height: 200, justifyContent: "space-around" }}>
                     <Button title="List Penerbangan" onPress={() => { this.props.navigation.navigate("ListPenerbangan") }} />
+                    <Button title="Upload File" onPress={() => { this.props.navigation.navigate("UploadFile") }} />
                     <Button title="Detail Pemesanan" onPress={() => { this.props.navigation.navigate("DetailPemesanan") }} />
                 </View>
             </ScrollView>

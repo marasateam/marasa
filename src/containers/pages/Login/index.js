@@ -10,7 +10,8 @@ import {
   ActivityIndicator,
   TouchableWithoutFeedback,
   Keyboard,
-  AsyncStorage
+  AsyncStorage,
+  Image
 } from "react-native";
 import "firebase/firestore";
 import firebase from "firebase";
@@ -22,19 +23,21 @@ class SignInScreen extends React.Component {
     super(props)
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
   }
-  onLoginSuccess(loginMethod) {
+  async onLoginSuccess(loginMethod) {
     this.props.navigation.navigate('App');
-    saveLoginMethod(loginMethod)
+    try{
+      await AsyncStorage.setItem("LOGIN_METHOD",loginMethod);
+      
+  }catch(error){
+      console.log("Error save login methode :"+error.message);
+    }
   }
+
   onLoginFailure(errorMessage) {
     this.setState({ error: errorMessage, loading: false });
   }
-  async saveLoginMethod(LoginMethod){
-    try{
-        await AsyncStorage.setItem("LOGIN_METHOD",LoginMethod);
-    }catch(error){
-        console.log("Error save login methode :"+error.message);
-    }
+  async saveLoginMethod(LoginMethod,USERNAME){
+    
   }
   renderLoading() {
     if (this.state.loading) {
@@ -102,8 +105,8 @@ class SignInScreen extends React.Component {
       >
         <SafeAreaView style={{ flex: 1 }}>
           <KeyboardAvoidingView style={styles.container} behavior="padding">
-            <Text style={{ fontSize: 32, fontWeight: "700", color: "gray" }}>
-              App Name
+            <Text style={{ fontSize: 32, fontWeight: "700", color: "gray",marginTop:20 }}>
+              Marasa
             </Text>
             <View style={styles.form}>
               <TextInput
@@ -145,18 +148,22 @@ class SignInScreen extends React.Component {
               <Text>Sign Up</Text>
               </View>
             </TouchableOpacity>
+            <View style={{flex:1,width:"100%",alignItems:"center",justifyContent:"flex-end",paddingBottom:50}}>
             <TouchableOpacity 
               style={{ width: "86%", marginTop: 10 }}
               onPress={() => this.signInWithFacebook()}>
+                
               <View style={styles.button}>
+              <Image source={require("../../../../assets/icon/facebook.png")} style={{width:25,height:25}}/>
                 <Text
                   style={{
                     letterSpacing: 0.5,
                     fontSize: 16,
-                    color: "#FFFFFF"
+                    color: "#FFFFFF",
+                    marginLeft:10
                   }}
                 >
-                  Continue with Facebook
+                  Masuk dengan Facebook
                 </Text>
               </View>
             </TouchableOpacity>
@@ -171,7 +178,7 @@ class SignInScreen extends React.Component {
                     color: "#707070"
                   }}
                 >
-                  Continue with Google
+                  Masuk dengan akun Google
                 </Text>
               </View>
             </TouchableOpacity>
@@ -182,9 +189,11 @@ class SignInScreen extends React.Component {
                   this.props.navigation.navigate("Register");
                 }}
               >
-                Don't have an Account?
+                Daftar Menggunakan Email.
               </Text>
             </View>
+            </View>
+            
           </KeyboardAvoidingView>
         </SafeAreaView>
       </TouchableWithoutFeedback>

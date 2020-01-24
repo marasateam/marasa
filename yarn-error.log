@@ -1,8 +1,11 @@
 Arguments: 
+
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @datepicker-react/styled styled-components
 
-PATH: 
-  C:\Python27\;C:\Python27\Scripts;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\Yarn\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\USER\AppData\Roaming\npm
+
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-reanimated
+
+
 
 Yarn version: 
   1.21.1
@@ -14,7 +17,21 @@ Platform:
   win32 x64
 
 Trace: 
+<<<<<<< HEAD
   Error: EPERM: operation not permitted, unlink 'E:\MarasaProject\marasa\node_modules\@babel\generator\node_modules\.bin'
+=======
+  Error: https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.12.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141292:19)
+      at Object.onceWrapper (events.js:286:20)
+      at ClientRequest.emit (events.js:198:13)
+      at TLSSocket.emitRequestTimeout (_http_client.js:662:40)
+      at Object.onceWrapper (events.js:286:20)
+      at TLSSocket.emit (events.js:198:13)
+      at TLSSocket.Socket._onTimeout (net.js:443:8)
+      at ontimeout (timers.js:436:11)
+      at tryOnTimeout (timers.js:300:5)
+      at listOnTimeout (timers.js:263:5)
+>>>>>>> c1c5ffe03fe58776e7f22beb9035f47823c6fb86
 
 npm manifest: 
   {
@@ -50,8 +67,11 @@ npm manifest:
       "react-native-modal-datetime-picker": "^8.1.1",
       "react-native-modals": "^0.19.9",
       "react-native-paper": "^3.4.0",
+<<<<<<< HEAD
       "react-native-picker-module": "^1.2.3",
       "react-native-picker-select": "^6.3.4",
+=======
+>>>>>>> c1c5ffe03fe58776e7f22beb9035f47823c6fb86
       "react-native-reanimated": "^1.7.0",
       "react-native-safe-area-context": "^0.6.2",
       "react-native-simple-radio-button": "^2.7.4",
@@ -5441,6 +5461,7 @@ Lockfile:
       color "^3.1.2"
       react-native-safe-area-view "^0.14.6"
   
+<<<<<<< HEAD
   "react-native-parsed-text@https://github.com/EvanBacon/react-native-parsed-text.git":
     version "0.0.22"
     resolved "https://github.com/EvanBacon/react-native-parsed-text.git#c909f64ee437796fd1b047edd73146fc89edb796"
@@ -5459,11 +5480,14 @@ Lockfile:
     dependencies:
       lodash.isequal "^4.5.0"
   
+=======
+>>>>>>> c1c5ffe03fe58776e7f22beb9035f47823c6fb86
   react-native-reanimated@^1.7.0:
     version "1.7.0"
     resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.7.0.tgz#896db2576552ac59d288a1f6c7f00afc171f240c"
     integrity sha512-FQWSqP605eQVJumuK2HpR+7heF0ZI+qfy4jNguv3Xv8nPFHeIgZaRTXHCEQL2AcuSIj50zy8jGJf5l134QMQWQ==
   
+<<<<<<< HEAD
   react-native-root-siblings@^3.2.2:
     version "3.2.3"
     resolved "https://registry.yarnpkg.com/react-native-root-siblings/-/react-native-root-siblings-3.2.3.tgz#df5a1cff3a3a1f433f57320e1cae719f1b15a3f2"
@@ -5472,6 +5496,8 @@ Lockfile:
       prop-types "^15.6.2"
       static-container "^1.0.0"
   
+=======
+>>>>>>> c1c5ffe03fe58776e7f22beb9035f47823c6fb86
   react-native-safe-area-context@^0.6.2:
     version "0.6.2"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-0.6.2.tgz#d467ac8a953426bfbb6d8f417222b0dc3952be7a"

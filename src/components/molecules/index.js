@@ -6,7 +6,11 @@ import ItemProfileLoginMethod from './ItemProfileLoginMethod'
 import ItemProfile from './ItemProfile'
 import NotificationsIcon from './NotificationsIcon';
 import HeaderListPenerbangan from './HeaderListPenerbangan'
-import ModalHeader from './ModalHeader'
+import ModalHeader from './ModalHeader/index.android'
+import FilterAndSortButton from './FilterAndSortButton'
+import CardFilter from './CardFilter'
+import CardPenerbangan from './CardPenerbangan'
+import HeaderModalDetail from './HeaderModalDetail'
 
 export {
     NamePoint, 
@@ -17,5 +21,9 @@ export {
     ItemProfileLoginMethod,
     NotificationsIcon,
     HeaderListPenerbangan,
-    ModalHeader
+    ModalHeader,
+    FilterAndSortButton,
+    CardFilter,
+    CardPenerbangan,
+    HeaderModalDetail
 }

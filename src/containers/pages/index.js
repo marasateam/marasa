@@ -12,6 +12,7 @@ import ListPenerbangan from './ListPenerbangan';
 import DetailPemesanan from './DetailPemesanan'
 import PesanChat from './PesanChat';
 import Notifications from './Notifications'
+import UploadFile from './UploadFile'
 export {
     Home,
     Profile,
@@ -25,5 +26,6 @@ export {
     ListPenerbangan,
     DetailPemesanan,
     PesanChat,
-    Notifications    
+    Notifications,
+    UploadFile    
 }
