@@ -165,12 +165,12 @@ class DetailPemesanan extends Component {
                         </View>
                     </View>
                 </Modal>
-                <Button
+                </View>
+            </View>
+            <Button
                     title = "Lanjutkan"
                     color = "red" style={{}}
                 />
-                </View>
-            </View>
             </ScrollView>
             </KeyboardAvoidingView>
         );
