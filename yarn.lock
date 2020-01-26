@@ -5326,17 +5326,15 @@ react-native-gifted-chat@^0.13.0:
     react-native-parsed-text "https://github.com/EvanBacon/react-native-parsed-text.git"
     uuid "3.3.3"
 
-<<<<<<< HEAD
 react-native-image-picker@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-2.2.0.tgz#12b5a29f5f21f4f7868e2a1e551b5528733f2d3e"
   integrity sha512-G0wNa92J6ADLrAraLfhl+AoaLDP0FE4YpYlSh6sguLTCTUzNDi0xfpEvpxxZgZ6Wl0anuRrCkcWm7LmJNLHI2Q==
-=======
+
 react-native-input-spinner@^1.2.8:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/react-native-input-spinner/-/react-native-input-spinner-1.2.8.tgz#e3566e465e46be19ef5039ecc38dfaaecfa0bc28"
   integrity sha512-CNiy/TwCz1dZ55MJytCHScMH+9TOA7UvxC2XIe9HHMmIsVk8mCjDzQcFh71vMTnoMHskaW54O90l8tbiu6ynwg==
->>>>>>> 63761b3bb0363e445c86b1b746cba8fd17d1db52
 
 react-native-iphone-x-helper@^1.2.0, react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
