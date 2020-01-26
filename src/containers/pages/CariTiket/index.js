@@ -21,7 +21,9 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 import DatePicker from "../../../components/molecules/DatePicker"
 import ReactNativePickerModule from 'react-native-picker-module'
 import InputSpinner from "react-native-input-spinner";
-import {Calendar} from "react-native-calendars"
+import { Calendar } from "react-native-calendars"
+import { ModalFilter, ModalUrutkanPenerbangan, ModalDetailFlight } from '../../organisms'
+
 
 class CariTiket extends Component {
     state = {
@@ -32,12 +34,13 @@ class CariTiket extends Component {
         modalVisible4: false,
         switch1Value: false,
         selectedValue: null,
-        data: [
-            "Ekonomi",
-            "Premium Ekonomi",
-            "Bisnis",
-            "First"
-        ],
+        modalVisible5:false,
+        sortFlight2: [
+            { label: 'Ekonomi', value: 0 },
+            { label: 'Premium Ekonomi', value: 1 },
+            { label: 'Bisnis', value: 0 },
+            { label: 'First', value: 1 }
+        ], value: 0
 
     }
 
@@ -367,27 +370,27 @@ class CariTiket extends Component {
                             </View>
                             <View>
                                 <Calendar style={{
-                                    borderWidth:1,
-                                    borderColor:'gray',
+                                    borderWidth: 1,
+                                    borderColor: 'gray',
                                     height: 350
                                 }}
-                                theme={{
-                                    backgroundColor:'#ffffff',
-                                    calendarBackground:'#ffffff',
-                                    textSectionTitleColor:'red',
-                                    selectedDayBackgroundColor:"red",
-                                    selectedDayTextColor:'#ffffff',
-                                    todayTextColor:'red',
-                                    dayTextColor:'red',
-                                    textDisabledColor:'#d9e1e8',
-                                    dotColor:'black',
-                                    selectedDotColor:'#ffffff',
-                                    arrowColor:'orange',
-                                    monthTextColor:'red',
-                                    textDayFontSize:16,
-                                    textMonthFontSize:16,
-                                    textDayHeaderFontSize:16
-                                }}
+                                    theme={{
+                                        backgroundColor: '#ffffff',
+                                        calendarBackground: '#ffffff',
+                                        textSectionTitleColor: 'red',
+                                        selectedDayBackgroundColor: "red",
+                                        selectedDayTextColor: '#ffffff',
+                                        todayTextColor: 'red',
+                                        dayTextColor: 'red',
+                                        textDisabledColor: '#d9e1e8',
+                                        dotColor: 'black',
+                                        selectedDotColor: '#ffffff',
+                                        arrowColor: 'orange',
+                                        monthTextColor: 'red',
+                                        textDayFontSize: 16,
+                                        textMonthFontSize: 16,
+                                        textDayHeaderFontSize: 16
+                                    }}
                                 />
                             </View>
                         </View>
@@ -432,7 +435,7 @@ class CariTiket extends Component {
                                     <Text style={{ color: "white", fontSize: 17 }}>Penumpang</Text>
                                 </View>
                                 <View>
-                                    <TouchableOpacity  onPress={() => {
+                                    <TouchableOpacity onPress={() => {
                                         this.setModalVisible4(!this.state.modalVisible4);
                                     }}>
                                         <Text style={{ right: 14, fontSize: 16, color: "white", top: 2 }}>Selesai</Text>
@@ -452,7 +455,7 @@ class CariTiket extends Component {
                                     onChange={(num) => {
                                         console.log(num);
                                     }}
-                                    style={{left:210,bottom:20}}
+                                    style={{ left: 210, bottom: 20 }}
 
                                 />
                                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: -10, borderColor: 'silver', marginLeft: 20, marginRight: 1 }}></View>
@@ -470,7 +473,7 @@ class CariTiket extends Component {
                                     onChange={(num) => {
                                         console.log(num);
                                     }}
-                                    style={{left:210,bottom:25}}
+                                    style={{ left: 210, bottom: 25 }}
 
                                 />
                                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: -15, borderColor: 'silver', marginLeft: 20, marginRight: 1 }}></View>
@@ -488,7 +491,7 @@ class CariTiket extends Component {
                                     onChange={(num) => {
                                         console.log(num);
                                     }}
-                                    style={{left:210,bottom:20}}
+                                    style={{ left: 210, bottom: 20 }}
 
                                 />
                                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: -15, borderColor: 'silver', marginLeft: 20, marginRight: 1 }}></View>
@@ -509,20 +512,45 @@ class CariTiket extends Component {
                 <View style={{ bottom: 82 }}>
                     <Text style={{ marginLeft: 40, top: 30, left: 10, fontWeight: '100' }}>Kelas Kabin</Text>
                     <Image source={require('../../../../assets/promo/kelas.png')} style={{ marginTop: 20, marginLeft: 10, width: 30, height: 30 }}></Image>
-                    <TouchableOpacity onPress={() => { this.pickerRef.show() }}>
-                        <Text style={{ color: "black", marginLeft: 50, bottom: 10, fontWeight: 'bold' }}>Ekonomi</Text>
+                    <TouchableOpacity style={styles.sortButton} onPress={()=> this.setState({modalVisible5:true})}>
+                        <Text style={{ color: "black", marginLeft: 50, bottom:10,fontWeight:'bold' }}>Ekonomi</Text>
                     </TouchableOpacity>
                 </View>
-                <ReactNativePickerModule
-                    pickerRef={e => this.pickerRef = e}
-                    value={this.state.selectedValue}
-                    title={"Kelas Penerbangan"}
-                    items={this.state.data}
-                    onValueChange={(index) => {
-                        this.setState({
-                            selectedValue: index
-                        })
-                    }} />
+                <Modals.BottomModal
+                    visible={this.state.modalVisible5}
+                    onTouchOutside={() => this.setState({modalVisible5:false})}
+                    height={0.5}
+                    width={1}
+                    onSwipeOut={this.props.onDismiss}
+                    modalTitle={
+                        <ModalTitle
+                            title="Kelas Penerbangan"
+                            hasTitleBar
+                        />
+                    }
+                >
+                    <ModalContent
+                        style={{
+                            flex: 1,
+                            backgroundColor: 'fff',
+
+                        }}
+                    >
+                        <RadioForm
+                            radio_props={this.state.sortFlight2}
+                            initial={0}
+                            onPress={(value) => { this.setState({ value: value }) }}
+                            style={{ flex: 1, justifyContent: "space-around" }}
+                            animation={false}
+                            buttonColor={'#F3225A'}
+                            selectedButtonColor={'#F3225A'}
+                            buttonSize={11}
+                            buttonOuterSize={22}
+                            labelStyle={{ fontSize: 16 }}
+                        />
+                    </ModalContent>
+                </Modals.BottomModal>
+
                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, bottom: 82, borderColor: 'silver', marginLeft: 14, marginRight: 20 }}></View>
                 <TouchableOpacity>
                     <Image source={require('../../../../assets/promo/up.png')} style={{ bottom: 430, left: 330 }} />
