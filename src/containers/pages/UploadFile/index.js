@@ -1,25 +1,24 @@
 import React, { Component } from "react";
-import { 
-    View,
+import {
+    Platform,
+    StyleSheet,
     Text,
-    StyleSheet
-} from "react-native";
+    View
+  } from 'react-native';
+import SwitchToggle from 'react-native-switch-toggle';
 
-class UploadFile extends Component {
+ class UploadFile extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text>UploadFile</Text>
-            </View>
-        );
+            <View>UploadFile Screen</View>
+        )
+        }
     }
-}
-export default UploadFile;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+export default UploadFile
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center'
+        }
+    });
