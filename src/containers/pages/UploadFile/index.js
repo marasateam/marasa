@@ -10,7 +10,9 @@ import SwitchToggle from 'react-native-switch-toggle';
  class UploadFile extends Component {
     render() {
         return (
-            <View>UploadFile Screen</View>
+            <View style={{styles}}>
+                <Text>UploadFile Screen</Text>
+            </View>
         )
         }
     }

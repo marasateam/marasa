@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { Ionicons } from '@expo/vector-icons'
 import { primaryColor } from '../../../styles/colors'
-import { ModalHeader } from '../../../components/molecules'
+import { ModalHeader, HeaderModalDetail } from '../../../components/molecules'
 import { Searchbar } from "react-native-paper";
 import SwitchExample from '../../../components/molecules/Switch/index.js'
 import Modals, { ModalContent, ModalTitle } from 'react-native-modals';
@@ -67,10 +67,12 @@ class CariTiket extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1 }}>
-                <View >
+            <View style={{ flex: 1,backgroundColor:'white' }}>
+                <TouchableOpacity  onPress={() => {
+                            this.setModalVisible(true);
+                        }}> 
                     <Text style={{ marginLeft: 40, top: 30, left: 10, fontWeight: '100' }}>Kota Asal</Text>
-                    <Image source={require('../../../../assets/promo/dari.png')} style={{ marginTop: 20, marginLeft: 10 }}></Image>
+                    <Image source={require('../../../../assets/promo/dari.png')} style={{ marginTop: 30, marginLeft: 15,height:25, width:25 }}></Image>
                     <Modal
                         animationType="slide"
                         transparent={false}
@@ -78,26 +80,7 @@ class CariTiket extends Component {
                         onRequestClose={() => {
                             Alert.alert('Modal has been closed.');
                         }}>
-                        <View style={{ marginTop: 22 }}>
-                            <View style={{
-                                height: 50,
-                                backgroundColor: primaryColor,
-                                flexDirection: "row",
-                                alignItems: "center",
-                                elevation: 1,
-                                marginBottom: 10,
-
-                            }}>
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        this.setModalVisible(!this.state.modalVisible);
-                                    }}>
-                                    <Ionicons name={'ios-close'} color="white" size={34} style={{ left: 20 }} />
-                                </TouchableOpacity>
-                                <View style={{ flex: 5, alignItems: "center" }}>
-                                    <Text style={{ color: "white", fontSize: 17 }}>Kota Asal</Text>
-                                </View>
-                            </View>
+                        <ModalHeader title="Kota asal" onPressClose={()=> this.setState({modalVisible:false})}/>
                             <Searchbar style={{ borderRadius: 20, height: 40, marginHorizontal: 10 }}>
                                 <Text style={{ fontWeight: '100' }}>Cari Bandara</Text>
                             </Searchbar>
@@ -115,34 +98,34 @@ class CariTiket extends Component {
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Makassar</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>UPG-Hasanuddin</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
 
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
 
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
 
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{
                                     backgroundColor: "#E6E6E6",
@@ -157,55 +140,54 @@ class CariTiket extends Component {
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                             </ScrollView>
-                        </View>
+                        
                     </Modal>
 
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.setModalVisible(true);
-                        }}>
+                    <View>
                         <Text style={{ left: 50, bottom: 10, fontWeight: "bold" }}>Sultan Hasanuddin (UPG)</Text>
-                    </TouchableOpacity>
+                    </View>
 
-                </View>
+                </TouchableOpacity>
                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, bottom: 4, borderColor: 'silver', marginLeft: 14, marginRight: 20 }}></View>
 
-                <View style={{ bottom: 20 }}>
+                <TouchableOpacity style={{ bottom: 20 }}  onPress={() => {
+                            this.setModalVisible1(true);
+                        }}>
                     <Text style={{ marginLeft: 40, top: 30, left: 10, fontWeight: '100' }}>Kota Tujuan</Text>
-                    <Image source={require('../../../../assets/promo/ke.png')} style={{ marginTop: 20, marginLeft: 10 }}></Image>
+                    <Image source={require('../../../../assets/promo/ke.png')} style={{ marginTop: 30, marginLeft: 15,height:25, width:25 }}></Image>
                     <Modal
                         animationType="slide"
                         transparent={false}
@@ -213,26 +195,7 @@ class CariTiket extends Component {
                         onRequestClose={() => {
                             Alert.alert('Modal has been closed.');
                         }}>
-                        <View style={{ marginTop: 22 }}>
-                            <View style={{
-                                height: 50,
-                                backgroundColor: primaryColor,
-                                flexDirection: "row",
-                                alignItems: "center",
-                                elevation: 1,
-                                marginBottom: 10,
-
-                            }}>
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        this.setModalVisible1(!this.state.modalVisible1);
-                                    }}>
-                                    <Ionicons name={'ios-close'} color="white" size={34} style={{ left: 20 }} />
-                                </TouchableOpacity>
-                                <View style={{ flex: 5, alignItems: "center" }}>
-                                    <Text style={{ color: "white", fontSize: 17 }}>Kota Tujuan</Text>
-                                </View>
-                            </View>
+                       <ModalHeader title="Kota Tujuan" onPressClose={()=> this.setState({modalVisible1:false})}/>
                             <Searchbar style={{ borderRadius: 20, height: 40, marginHorizontal: 10 }}>
                                 <Text style={{ fontWeight: '100' }}>Cari Bandara</Text>
                             </Searchbar>
@@ -250,34 +213,34 @@ class CariTiket extends Component {
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Makassar</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>UPG-Hasanuddin</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
 
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
 
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
 
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{
                                     backgroundColor: "#E6E6E6",
@@ -292,55 +255,54 @@ class CariTiket extends Component {
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                                 <View style={{ bottom: -10 }}>
                                     <Text style={{ marginLeft: 40, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Surabaya</Text>
                                     <Text style={{ marginLeft: 40, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>SUB-Juanda</Text>
                                     <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: 30, borderColor: 'silver', marginLeft: 50, marginRight: 1 }}></View>
-                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -2, left: 15 }}></Image>
+                                    <Image source={require('../../../../assets/promo/airport.png')} style={{ top: -5, left: 15,height:25, width:25 }}></Image>
                                 </View>
                             </ScrollView>
-                        </View>
+                    
                     </Modal>
 
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.setModalVisible1(true);
-                        }}>
+                    <View>
                         <Text style={{ left: 50, bottom: 10, fontWeight: 'bold' }}>Surabaya (SUB)</Text>
-                    </TouchableOpacity>
+                    </View>
 
-                </View>
+                </TouchableOpacity>
                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, bottom: 22, borderColor: 'silver', marginLeft: 14, marginRight: 20 }}></View>
 
-                <View style={{ bottom: 40 }}>
+                <TouchableOpacity style={{ bottom: 40 }} onPress={() => {
+                            this.setModalVisible2(true);
+                        }}>
                     <Text style={{ marginLeft: 40, top: 30, left: 10, fontWeight: '100' }}>Tanggal Berangkat</Text>
-                    <Image source={require('../../../../assets/promo/pergi.png')} style={{ marginTop: 20, marginLeft: 10, width: 30, height: 30 }}></Image>
+                    <Image source={require('../../../../assets/promo/pergi.png')} style={{ marginTop: 30, marginLeft: 15,height:25, width:25 }}></Image>
                     <Modal
                         animationType="slide"
                         transparent={false}
@@ -348,27 +310,7 @@ class CariTiket extends Component {
                         onRequestClose={() => {
                             Alert.alert('Modal has been closed.');
                         }}>
-                        <View style={{ marginTop: 22 }}>
-                            <View style={{
-                                height: 50,
-                                backgroundColor: primaryColor,
-                                flexDirection: "row",
-                                alignItems: "center",
-                                elevation: 1,
-                                marginBottom: 10,
-
-                            }}>
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        this.setModalVisible2(!this.state.modalVisible2);
-                                    }}>
-                                    <Ionicons name={'ios-close'} color="white" size={34} style={{ left: 20 }} />
-                                </TouchableOpacity>
-                                <View style={{ flex: 5, alignItems: "center" }}>
-                                    <Text style={{ color: "white", fontSize: 17 }}>Tanggal Berangkat</Text>
-                                </View>
-                            </View>
-                            <View>
+                        <ModalHeader title="Tanggal Berangkat" onPressClose={()=> this.setState({modalVisible2:false})}/>
                                 <Calendar style={{
                                     borderWidth: 1,
                                     borderColor: 'gray',
@@ -392,22 +334,19 @@ class CariTiket extends Component {
                                         textDayHeaderFontSize: 16
                                     }}
                                 />
-                            </View>
-                        </View>
                     </Modal>
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.setModalVisible2(true);
-                        }}>
+                    <View>
                         <Text style={{ left: 50, bottom: 10, fontWeight: 'bold' }}>23 Januari 2020</Text>
-                    </TouchableOpacity>
+                    </View>
 
-                </View>
+                </TouchableOpacity>
                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, bottom: 42, borderColor: 'silver', marginLeft: 14, marginRight: 20 }}></View>
 
-                <View style={{ bottom: 60 }}>
+                <TouchableOpacity style={{ bottom: 60 }} onPress={() => {
+                            this.setModalVisible4(true);
+                        }}>
                     <Text style={{ marginLeft: 40, top: 30, left: 10, fontWeight: '100' }}>Penumpang</Text>
-                    <Image source={require('../../../../assets/promo/penumpang.png')} style={{ marginTop: 20, marginLeft: 10, width: 30, height: 30 }}></Image>
+                    <Image source={require('../../../../assets/promo/penumpang.png')} style={{ marginTop: 30, marginLeft: 15,height:25, width:25}}></Image>
                     <Modal
                         animationType="slide"
                         transparent={false}
@@ -415,33 +354,14 @@ class CariTiket extends Component {
                         onRequestClose={() => {
                             Alert.alert('Modal has been closed.');
                         }}>
-                        <View style={{ marginTop: 22 }}>
-                            <View style={{
-                                height: 50,
-                                backgroundColor: primaryColor,
-                                flexDirection: "row",
-                                alignItems: "center",
-                                elevation: 1,
-                                marginBottom: 10,
-
-                            }}>
-                                <TouchableOpacity
-                                    onPress={() => {
+                       <ModalHeader title="Penumpang" onPressClose={()=> this.setState({modalVisible4:false})} >
+                       <TouchableOpacity onPress={() => {
                                         this.setModalVisible4(!this.state.modalVisible4);
                                     }}>
-                                    <Ionicons name={'ios-close'} color="white" size={34} style={{ left: 20 }} />
-                                </TouchableOpacity>
-                                <View style={{ flex: 5, alignItems: "center" }}>
-                                    <Text style={{ color: "white", fontSize: 17 }}>Penumpang</Text>
-                                </View>
-                                <View>
-                                    <TouchableOpacity onPress={() => {
-                                        this.setModalVisible4(!this.state.modalVisible4);
-                                    }}>
-                                        <Text style={{ right: 14, fontSize: 16, color: "white", top: 2 }}>Selesai</Text>
+                                        <Text style={{ left:10, fontSize: 16, color: "white", top: 2 }}>Selesai</Text>
                                     </TouchableOpacity>
-                                </View>
-                            </View>
+                       </ModalHeader>
+                                   
                             <View>
                                 <Text style={{ marginLeft: 10, top: 20, left: 10, fontWeight: '300', fontSize: 16 }}>Dewasa</Text>
                                 <Text style={{ marginLeft: 10, top: 25, left: 10, fontWeight: '100', fontSize: 10 }}>12 tahun ke atas</Text>
@@ -496,26 +416,22 @@ class CariTiket extends Component {
                                 />
                                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, top: -15, borderColor: 'silver', marginLeft: 20, marginRight: 1 }}></View>
                             </View>
-                        </View>
                     </Modal>
 
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.setModalVisible4(true);
-                        }}>
+                    <View>
                         <Text style={{ left: 50, bottom: 10, fontWeight: 'bold' }}>1 Dewasa</Text>
-                    </TouchableOpacity>
+                    </View>
 
-                </View>
+                </TouchableOpacity>
                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, bottom: 62, borderColor: 'silver', marginLeft: 14, marginRight: 20 }}></View>
 
-                <View style={{ bottom: 82 }}>
+                <TouchableOpacity style={{ bottom: 82 }} onPress={()=> this.setState({modalVisible5:true})}>
                     <Text style={{ marginLeft: 40, top: 30, left: 10, fontWeight: '100' }}>Kelas Kabin</Text>
-                    <Image source={require('../../../../assets/promo/kelas.png')} style={{ marginTop: 20, marginLeft: 10, width: 30, height: 30 }}></Image>
-                    <TouchableOpacity style={styles.sortButton} onPress={()=> this.setState({modalVisible5:true})}>
+                    <Image source={require('../../../../assets/promo/kelas.png')} style={{ marginTop: 20, marginLeft: 15,height:25, width:25 }}></Image>
+                    <View style={styles.sortButton} >
                         <Text style={{ color: "black", marginLeft: 50, bottom:10,fontWeight:'bold' }}>Ekonomi</Text>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
                 <Modals.BottomModal
                     visible={this.state.modalVisible5}
                     onTouchOutside={() => this.setState({modalVisible5:false})}
@@ -552,9 +468,6 @@ class CariTiket extends Component {
                 </Modals.BottomModal>
 
                 <View style={{ borderStyle: 'solid', borderBottomWidth: 1, bottom: 82, borderColor: 'silver', marginLeft: 14, marginRight: 20 }}></View>
-                <TouchableOpacity>
-                    <Image source={require('../../../../assets/promo/up.png')} style={{ bottom: 430, left: 330 }} />
-                </TouchableOpacity>
                 <TouchableOpacity style={{
                     backgroundColor: "red",
                     paddingHorizontal: 10,
@@ -563,7 +476,7 @@ class CariTiket extends Component {
                     alignItems: "center",
                     marginRight: 40,
                     marginLeft: 40,
-                    bottom: 80
+                    bottom: 60
                 }}
                 onPress={()=>{this.props.navigation.navigate("ListPenerbangan")}}
                 >
