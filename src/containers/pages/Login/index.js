@@ -11,14 +11,16 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   AsyncStorage,
-  Image
+  Image,
+  Button
 } from "react-native";
 import "firebase/firestore";
 import firebase from "firebase";
 import * as Facebook from 'expo-facebook'
 import * as GoogleSignIn from 'expo-google-sign-in'
+import {LoadingIndicator} from '../../../components/atoms'
 class SignInScreen extends React.Component {
-  state = { email: '', password: '', errorMessage: '', loading: false };
+  state = { email: '', password: '', errorMessage: '', loading: false,loadingModal:false };
   constructor(props){
     super(props)
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
@@ -192,6 +194,7 @@ class SignInScreen extends React.Component {
                 Daftar Menggunakan Email.
               </Text>
             </View>
+            
             </View>
             
           </KeyboardAvoidingView>

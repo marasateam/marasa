@@ -11,8 +11,9 @@ import CariTiket from './CariTiket';
 import ListPenerbangan from './ListPenerbangan';
 import DetailPemesanan from './DetailPemesanan'
 import PesanChat from './PesanChat';
-import Notifications from './Notifications'
-import UploadFile from './UploadFile'
+import Notifications from './Notifications';
+import UploadFile from './UploadFile';
+import SelesaiUpload from './SelesaiUpload'
 export {
     Home,
     Profile,
@@ -27,5 +28,6 @@ export {
     DetailPemesanan,
     PesanChat,
     Notifications,
-    UploadFile    
+    UploadFile,
+    SelesaiUpload,    
 }

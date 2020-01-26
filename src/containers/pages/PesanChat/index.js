@@ -16,7 +16,7 @@ class PesanChat extends Component {
             messages: [
                 {
                     _id: 1,
-                    text: 'Hello developer',
+                    text: 'Hai ada yang bisa kami bantu .?',
                     createdAt: new Date(),
                     user: {
                         _id: 2,
