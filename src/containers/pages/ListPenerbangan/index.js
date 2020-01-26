@@ -28,6 +28,12 @@ class ListPenerbangan extends Component {
                 <ScrollView>
                     <CardPenerbangan onDetailPress={()=>{this.setState({modalDetailFlight:true})}}/>
                     <CardPenerbangan onDetailPress={()=>{this.setState({modalDetailFlight:true})}}/>
+                    <CardPenerbangan onDetailPress={()=>{this.setState({modalDetailFlight:true})}}/>
+                    <CardPenerbangan onDetailPress={()=>{this.setState({modalDetailFlight:true})}}/>
+                    <CardPenerbangan onDetailPress={()=>{this.setState({modalDetailFlight:true})}}/>
+                    <CardPenerbangan onDetailPress={()=>{this.setState({modalDetailFlight:true})}}/>
+                    <CardPenerbangan onDetailPress={()=>{this.setState({modalDetailFlight:true})}}/>
+                    <CardPenerbangan onDetailPress={()=>{this.setState({modalDetailFlight:true})}}/>
                 </ScrollView>
                 <FilterAndSortButton onClickSort={() => this.setState({ modalSort: true })} onClickFilter={() => this.setState({ modalFilter: true })} />
                 <ModalUrutkanPenerbangan visible={this.state.modalSort} onDismiss={() => this.setState({ modalSort: false })} />

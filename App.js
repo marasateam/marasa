@@ -1,4 +1,3 @@
-import HomeScreen from './screens/Navigator/HomeScreen'
 import AuthNavigator from './src/navigations/AuthNavigator'
 import {createAppContainer,createSwitchNavigator } from 'react-navigation'
 import firebase from 'firebase'

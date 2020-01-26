@@ -42,15 +42,17 @@ const PoinInProfile = (props) => {
     )
 }
 class ProfileScreen extends Component {
-    state = { user: {}, loginMethod: "" };
+    state = { user: {}, loginMethod: "",username:"" };
     componentDidMount() {
         firebase.auth().onAuthStateChanged((user) => {
             if (user != null) {
                 this.setState({ user: user });
             }
         });
-        AsyncStorage.getItem("LOGIN_METHOD").then((value) => { this.setState({ loginMethod: value }) })
-
+        AsyncStorage.getItem("LOGIN_METHOD").then((value) => { this.setState({ loginMethod: value })
+        AsyncStorage.getItem(this.state.user.uid).then(value=>{this.setState({username:value})})
+    })
+        
     }
 
     render() {
@@ -62,7 +64,7 @@ class ProfileScreen extends Component {
                             source={this.state.loginMethod=="EMAIL"?{uri:"https://www.jumpstarttech.com/files/2018/08/Network-Profile.png"}:  {uri: firebase.auth().currentUser.photoURL}} 
                             style={styles.imageProfile}
                         />
-                        <Text style={{ marginTop: 5, fontWeight: "bold" }}>{firebase.auth().currentUser.displayName}</Text>
+                        <Text style={{ marginTop: 5, fontWeight: "bold" }}>{this.state.loginMethod!="EMAIL"?this.state.user.displayName:this.state.username}</Text>
 
                         <View style={{ alignItems: "center" }}>
                             <View style={{ borderBottomWidth: 1, borderColor: "#C4C4C4", width: 250, marginBottom: 10, marginTop: 10 }}></View>
@@ -77,7 +79,7 @@ class ProfileScreen extends Component {
                         <View style={{ marginBottom: 10, flexDirection: "row", alignItems: "center", justifyContent: "flex-start" }}>
                             <Text style={{ fontWeight: "bold", fontSize: 20 }}>Akun</Text>
                         </View>
-                        <ItemProfile Title="Nama" Content={this.state.user.displayName} IconName="ios-person" />
+                        <ItemProfile Title="Nama" Content={this.state.loginMethod!="EMAIL"?this.state.user.displayName:this.state.username} IconName="ios-person" />
                         <ItemProfile Title="Email" Content={this.state.user.email} IconName="ios-mail" />
                         <ItemProfileLoginMethod Title="Metode Login" loginMethod={this.state.loginMethod} />
 

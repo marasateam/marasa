@@ -12,35 +12,40 @@ import {
   TouchableWithoutFeedback,
   AsyncStorage,
   ImageBackground,
-  Image
+  Image,
+  Button
 } from 'react-native';
 import 'firebase/firestore';
 import firebase from 'firebase';
 import * as Facebook from 'expo-facebook'
 import * as GoogleSignIn from 'expo-google-sign-in'
 import {primaryColor} from '../../../styles/colors'
+import {LoadingIndicator} from '../../../components/atoms'
 class SignUpScreen extends React.Component {
-  state = { displayName: '', email: '', password: '', errorMessage: '', loading: false };
+  state = { displayName: '',uid:'', email: '', password: '', errorMessage: '', loading: false,loadingModal:false };
   constructor(props){
     super(props)
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
   }
   onLoginSuccess(LoginMethod) {
-    this.saveLoginMethod(LoginMethod)
+    this.saveLoginMethod(LoginMethod);
     this.props.navigation.navigate('App');
   }
   onLoginFailure(errorMessage) {
     this.setState({ error: errorMessage, loading: false });
   }
-  async saveLoginMethod(LoginMethod,USERNAME){
+  async saveLoginMethod(LoginMethod){
     try{
       await AsyncStorage.setItem("LOGIN_METHOD",LoginMethod);
         if(LoginMethod=="EMAIL"){
-          await AsyncStorage.setItem(this.state.email,this.state.displayName)
-          console.log("Register Email")
-        }else{
-          console.log("bukan register email")
-        }   
+          firebase.auth().onAuthStateChanged((user) => {
+            if (user != null) {
+                console.log("register uid user : "+user.uid);
+                this.setState({uid:user.uid})
+                AsyncStorage.setItem(user.uid,this.state.displayName)
+            }
+        });
+        }  
     }catch(error){
         console.log("Error save login methode :"+error.message);
     }
@@ -55,6 +60,7 @@ class SignUpScreen extends React.Component {
     }
   }
   async signInWithEmail() {
+    //this.setState({loadingModal:true});
     await firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -99,6 +105,7 @@ class SignUpScreen extends React.Component {
       alert('login: Error:' + message);
     }
   }
+  
   render() {
     return (
       <TouchableWithoutFeedback
@@ -201,6 +208,7 @@ class SignUpScreen extends React.Component {
                 Already have an account?
               </Text>
             </View>
+            <LoadingIndicator visible={this.state.loadingModal}/>
           </KeyboardAvoidingView>
         </SafeAreaView>
       </TouchableWithoutFeedback>

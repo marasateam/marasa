@@ -10,8 +10,7 @@ const ModalHeader = (props) => {
             backgroundColor: primaryColor,
             flexDirection: "row",
             alignItems: "center",
-            elevation: 1,
-            marginBottom: 10,
+            elevation: 1
 
         }}>
             <TouchableOpacity style={{ flex: 1, 

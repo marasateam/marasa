@@ -564,7 +564,9 @@ class CariTiket extends Component {
                     marginRight: 40,
                     marginLeft: 40,
                     bottom: 80
-                }}>
+                }}
+                onPress={()=>{this.props.navigation.navigate("ListPenerbangan")}}
+                >
                     <Text style={{ fontSize: 16, fontWeight: "bold", color: 'white' }}>Cari Penerbangan</Text>
                 </TouchableOpacity>
             </View >

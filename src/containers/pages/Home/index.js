@@ -7,6 +7,7 @@ import firebase from 'firebase';
 class HomeScreen extends React.Component {
     state={
         user:{},
+        
         loginMethod:"",
         username:""
     }
@@ -16,14 +17,13 @@ class HomeScreen extends React.Component {
                 this.setState({ user: user });
                 AsyncStorage.getItem("LOGIN_METHOD").then((value) => { 
                     this.setState({ loginMethod: value });
-                    console.log("login methode : "+value);
-                    console.log("email : "+this.state.user.email)
-                    AsyncStorage.getItem(this.state.user.email).then(value=>{this.setState({username:value})})
+                    AsyncStorage.getItem(this.state.user.uid).then(value=>{this.setState({username:value}); console.log("username uid : "+value)})
+                    console.log(this.state.user.uid);
+                    
                 })
             }
         });
     }
-    
     render() {
         return (
             <ScrollView style={{ marginHorizontal: 17, paddingTop: 16 }} showsVerticalScrollIndicator={false}>
@@ -45,7 +45,7 @@ class HomeScreen extends React.Component {
                 </View>
                 <Recomended />
                 <View style={{ height: 200, justifyContent: "space-around" }}>
-                    <Button title="List Penerbangan" onPress={() => { this.props.navigation.navigate("ListPenerbangan") }} />
+                    <Button title="Selesai Upload" onPress={() => { this.props.navigation.navigate("SelesaiUpload") }} />
                     <Button title="Upload File" onPress={() => { this.props.navigation.navigate("UploadFile") }} />
                     <Button title="Detail Pemesanan" onPress={() => { this.props.navigation.navigate("DetailPemesanan") }} />
                 </View>

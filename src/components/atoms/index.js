@@ -6,7 +6,7 @@ import ButtonSetFilter from './ButtonSetFilter'
 import FilterCheckBox from './FilterCheckBox'
 import HighlightPrice from './HighlightPrice'
 import JumlahPenerbangan from './JumlahPenerbangan'
-
+import LoadingIndicator from './LoadingIndicator'
 export {
     PromoCard,
     SettingsIcon,
@@ -15,5 +15,6 @@ export {
     ButtonSetFilter,
     FilterCheckBox,
     HighlightPrice,
-    JumlahPenerbangan
+    JumlahPenerbangan,
+    LoadingIndicator
 }
